@@ -7,11 +7,9 @@ PruebaMuseo es una plataforma de gestión de museos desarrollada bajo una arquit
 La solución utiliza Eureka Server para el descubrimiento de servicios, Spring Cloud Gateway para el enrutamiento centralizado, WebClient para la comunicación entre microservicios, JWT para autenticación y Docker para el despliegue de la aplicación.
 
 
-
 Integrantes
 
 Arion Ruiz-Tagle Zepeda
-
 
 
 Arquitectura
@@ -41,24 +39,20 @@ API Gateway       | 8091
 Eureka Server     | 8761   
 
 
-
 Tecnologías Utilizadas
 
-* Java 21
-* Spring Boot
-* Spring Data JPA
-* Spring Security
-* JWT
-* Spring Cloud Gateway
-* Eureka Server
-* WebClient
-* MySQL
-* Docker
-* Swagger/OpenAPI
-* Maven
-* GitHub
-
-
+- Spring Boot
+- Spring Data JPA
+- Spring Security
+- JWT
+- Eureka Server
+- Spring Cloud Gateway
+- WebClient
+- MySQL
+- Docker
+- Swagger/OpenAPI
+- JUnit 5
+- Mockito
 
 Comunicación entre Microservicios
 
@@ -71,7 +65,6 @@ Ejemplos:
 * Pagos procesa reservas.
 * Tickets se generan a partir de reservas confirmadas.
 * Notificaciones informa eventos relevantes del sistema.
-
 
 
 API Gateway
@@ -93,7 +86,6 @@ Ruta
 /api/empleados      
 /api/salas         
 /auth/login               
-
 
 
 Documentación Swagger
@@ -140,8 +132,6 @@ Salas
 
 http://localhost:8090/swagger-ui.html
 
-
-
 Despliegue Local
 
 Requisitos
@@ -154,18 +144,13 @@ Requisitos
 
 Clonar repositorio
 
-
 git clone https://github.com/kawyyz/PruebaMuseo.git
-
 
 Compilar microservicios
 
-
 mvn clean package
 
-
 Construir imágenes Docker
-
 
 docker build -t prueba3-clientes ./clientes
 docker build -t prueba3-museos ./museos
@@ -180,12 +165,9 @@ docker build -t prueba3-salas ./salas
 docker build -t prueba3-gateway ./gateway
 docker build -t prueba3-eurekaserver ./eurekaserver
 
-
 Ejecutar contenedores
 
 Iniciar Eureka Server, microservicios y Gateway mediante Docker.
-
-
 
 Seguridad
 
@@ -197,8 +179,6 @@ Flujo:
 2. Se genera token JWT.
 3. El token es enviado en cada petición protegida.
 4. Gateway valida y reenvía la solicitud al microservicio correspondiente.
-
-
 
 Repositorio
 
